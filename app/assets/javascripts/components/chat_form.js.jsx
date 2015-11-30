@@ -11,9 +11,12 @@ var ChatForm = React.createClass({
 
   hundleSubmit: function(e) {
     e.preventDefault();
+
     this.props.onSubmitForm({
       message: this.state
     });
+
+    this.setState({ text: '' });
   },
 
   render: function() {
@@ -25,7 +28,7 @@ var ChatForm = React.createClass({
             type="text"
             className="form-control"
             id="inputText"
-            value={this.text}
+            value={this.state.text}
             onChange={this.hundleChangeText}
           />
         </div>
