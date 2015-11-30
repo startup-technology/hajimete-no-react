@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="page-header">
+    <h1>サンプル</h1>
+  </div>
+
+  <%= react_component 'Chat', messages_path: messages_path(format: :json), create_message_path: messages_path(format: :json) %>
+</div>
