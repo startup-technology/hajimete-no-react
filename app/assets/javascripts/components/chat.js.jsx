@@ -7,10 +7,15 @@ var Chat = React.createClass({
 
   componentDidMount: function() {
     this.fetchMessages();
+    this.setInterval(this.fetchMessages, 3000);
   },
 
   hundleSubmitForm: function(message) {
     this.createMessage(message);
+  },
+
+  setInterval: function(callback, interval) {
+    setInterval(callback.bind(this), interval);
   },
 
   createMessage(message) {
